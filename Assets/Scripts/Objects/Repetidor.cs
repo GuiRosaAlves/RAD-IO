@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ColliderInfo {Null, Signal, Interference };
 public class Repetidor : MonoBehaviour
 {
     protected GameObject particuleReference;
     protected Repetidor fatherReference;
     public float secondsToLoseSignal = 2;
-    protected enum ColliderInfo { Signal, Interference };
-    protected ColliderInfo curCollisionInfo = default(ColliderInfo);
+    protected ColliderInfo curCollisionInfo = ColliderInfo.Null;
     protected bool canCollide = true;
 
 
@@ -107,7 +107,7 @@ public class Repetidor : MonoBehaviour
     protected void CheckInterference()
     {
         if (curCollisionInfo == ColliderInfo.Interference)
-            curCollisionInfo = default(ColliderInfo);
+            curCollisionInfo = ColliderInfo.Null;
     }
 
     protected void CheckConnection()
