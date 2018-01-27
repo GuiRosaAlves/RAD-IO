@@ -26,7 +26,6 @@ public class Repetidor : MonoBehaviour
         }
 
         canCollide = false;
-        GetComponent<Collider2D>().enabled = false;
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
