@@ -68,9 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfa2508661d6c341be309f3bc9b55f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reference: {fileID: 0}
   secondsToLoseSignal: 2
-  isReceivingInterference: 0
+  adjust: 2
 --- !u!212 &212339573419270888
 SpriteRenderer:
   m_ObjectHideFlags: 1
