@@ -9,15 +9,40 @@ public class Repetidor : MonoBehaviour
     public bool isReceivingInterference = false;
     private enum ColliderInfo { Signal, Interference };
     private ColliderInfo curCollisionInfo = default(ColliderInfo);
+    private bool canCollide = true;
 
     private void Awake()
     {
         InvokeRepeating("CheckInterference", 0, 0.3f);
-        InvokeRepeating("DisableParticule", 0, 0.5f);
+        //InvokeRepeating("DisableParticule", 0, 0.5f);
+    }
+
+    private void OnMouseDrag()
+    {
+        if(reference != null)
+        {
+            Destroy(reference);
+            reference = null;
+        }
+
+        canCollide = false;
+        GetComponent<Collider2D>().enabled = false;
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
+    }
+
+    private void OnMouseUp()
+    {
+        canCollide = true;
+        GetComponent<Collider2D>().enabled = true;
     }
 
     private void OnParticleCollision(GameObject coll)
     {
+        if (!canCollide)
+            return;
+
         if (coll.transform.IsChildOf(transform))
             return;
 
@@ -72,12 +97,12 @@ public class Repetidor : MonoBehaviour
             curCollisionInfo = default(ColliderInfo);
     }
 
-    public void DisableParticule()
-    {
-        if (curCollisionInfo == default(ColliderInfo))
-        {
-            Destroy(reference);
-            reference = null;
-        }
-    }
+    //public void DisableParticule()
+    //{
+    //    if (curCollisionInfo == default(ColliderInfo))
+    //    {
+    //        Destroy(reference);
+    //        reference = null;
+    //    }
+    //}
 }
