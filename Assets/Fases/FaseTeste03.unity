@@ -569,7 +569,6 @@ GameObject:
   - component: {fileID: 428512177}
   - component: {fileID: 428512176}
   - component: {fileID: 428512175}
-  - component: {fileID: 428512180}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -647,22 +646,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &428512180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 428512174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70dcd3c6ae58d7644a3448337031cd23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repetidorPrefab: {fileID: 1543390535121510, guid: 9812fcd0942364e448bf9d642a4f3e01,
-    type: 2}
-  emissorPrefab: {fileID: 1050934146198544, guid: 00ee1208416ebb843bc9682a4341cb95,
-    type: 2}
-  listOfRepetidores: []
 --- !u!1001 &492592213
 Prefab:
   m_ObjectHideFlags: 0
