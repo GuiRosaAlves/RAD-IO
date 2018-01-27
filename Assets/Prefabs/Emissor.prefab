@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4986155446070068}
   - component: {fileID: 198364093923489826}
   - component: {fileID: 199669040210775208}
+  - component: {fileID: 122395642510650234}
   m_Layer: 0
   m_Name: Emissor
   m_TagString: Sinal
@@ -34,13 +35,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1050934146198544}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.32, y: 3.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!122 &122395642510650234
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050934146198544}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4279488256
+  m_Size: 1
 --- !u!198 &198364093923489826
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -99,15 +111,15 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
-  randomSeed: -1579766489
+  scalingMode: 2
+  randomSeed: 47248330
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -148,7 +160,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -496,7 +508,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 500
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -742,23 +754,23 @@ ParticleSystem:
     m_BurstCount: 4
     m_Bursts:
     - time: 0
-      minCount: 10
-      maxCount: 10
-      cycleCount: 1
-      repeatInterval: 0.01
-    - time: 0.25
-      minCount: 10
-      maxCount: 10
+      minCount: 20
+      maxCount: 20
       cycleCount: 1
       repeatInterval: 0.01
     - time: 0.5
-      minCount: 10
-      maxCount: 10
+      minCount: 20
+      maxCount: 20
       cycleCount: 1
       repeatInterval: 0.01
-    - time: 0.75
-      minCount: 30
-      maxCount: 30
+    - time: 1
+      minCount: 20
+      maxCount: 20
+      cycleCount: 1
+      repeatInterval: 0.01
+    - time: 1
+      minCount: 50
+      maxCount: 50
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -773,15 +785,15 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0
-          inSlope: 1
-          outSlope: 1
+          value: 1
+          inSlope: -1
+          outSlope: -1
           tangentMode: 0
         - serializedVersion: 2
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 1
+          value: 0
+          inSlope: -1
+          outSlope: -1
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1014,7 +1026,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1022,8 +1034,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2442,7 +2454,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3338,7 +3350,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
