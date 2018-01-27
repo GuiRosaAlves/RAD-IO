@@ -36,7 +36,7 @@ public class PontoB : MonoBehaviour
         {
             if (collisionInfo == ColliderInfo.Interference)
             {
-                currSignal -= 0.1f * signalMultiplier * multiplier;
+                currSignal -= 0.1f * loseSignalRate * multiplier;
             }
             else if (collisionInfo == ColliderInfo.Signal)
             {
@@ -60,15 +60,14 @@ public class PontoB : MonoBehaviour
         SignalBar.fillAmount = (currSignal < 0) ? (currSignal * -1 / maxSignal) : (currSignal / maxSignal);
 
         currSignal = Mathf.Clamp(currSignal, aux, maxSignal);
-        print("Hello " + currSignal);
 
         if (currSignal == maxSignal)
         {
-            GameManager.instance.NextPhase();
+            SwapScenesAux.instance.NextScene();
         }
         else if (currSignal == -maxSignal)
         {
-            GameManager.instance.GameOver();
+            SwapScenesAux.instance.GameOver();
         }
     }
 

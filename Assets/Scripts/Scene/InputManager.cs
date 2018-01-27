@@ -10,5 +10,6 @@ public class InputManager : MonoBehaviour {
 
     private void Start()
     {
+
     }
 }

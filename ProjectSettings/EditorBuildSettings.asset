@@ -4,4 +4,28 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Fases/Main Scene.unity
+    guid: 617b1b81a28d1de46ae6da4ef5dd87e1
+  - enabled: 1
+    path: Assets/Fases/Menu Scene.unity
+    guid: fc60e005ff72dfb48918a6c3089dbbc2
+  - enabled: 1
+    path: Assets/Fases/FaseTeste01.unity
+    guid: 602c067f189591a4fb470bfa49480181
+  - enabled: 1
+    path: Assets/Fases/FaseTeste02.unity
+    guid: 21e66a5e0310bfd4db6120ffc5bd7018
+  - enabled: 1
+    path: Assets/Fases/FaseTeste03.unity
+    guid: e4baa1bc7ad1c214a986ba3be107d4b8
+  - enabled: 1
+    path: Assets/Fases/FaseTeste04.unity
+    guid: bd3e0d2adbbc41f488a820de528ed006
+  - enabled: 1
+    path: Assets/Fases/FaseTeste05.unity
+    guid: fa32c0eed4fd2d546870ec1027ec163c
+  - enabled: 1
+    path: Assets/Fases/GameOver Scene.unity
+    guid: 5a9e4636db1bc3447ab9830ccc31dbb3
