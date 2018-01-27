@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
     public GameObject repetidorPrefab;
     public GameObject emissorPrefab;
 
+    public List<Transform> listOfRepetidores;
+
     private void Awake()
     {
         instance = this;

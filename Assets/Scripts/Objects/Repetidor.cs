@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Repetidor : MonoBehaviour
 {
-    protected GameObject reference;
+    protected GameObject particuleReference;
+    protected Repetidor fatherReference;
     public float secondsToLoseSignal = 2;
-    public bool isReceivingInterference = false;
-    private enum ColliderInfo { Signal, Interference };
-    private ColliderInfo curCollisionInfo = default(ColliderInfo);
-    private bool canCollide = true;
+    protected enum ColliderInfo { Signal, Interference };
+    protected ColliderInfo curCollisionInfo = default(ColliderInfo);
+    protected bool canCollide = true;
 
-    private void Awake()
+
+    protected void Awake()
     {
         InvokeRepeating("CheckInterference", 0, 0.3f);
-        //InvokeRepeating("DisableParticule", 0, 0.5f);
     }
 
-    private void OnMouseDrag()
+    protected void OnMouseDrag()
     {
-        if(reference != null)
+        if (particuleReference != null)
         {
-            Destroy(reference);
-            reference = null;
+            Destroy(particuleReference);
+            particuleReference = null;
         }
 
         canCollide = false;
@@ -32,13 +32,18 @@ public class Repetidor : MonoBehaviour
         transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
     }
 
-    private void OnMouseUp()
+    protected void OnMouseUp()
     {
         canCollide = true;
         GetComponent<Collider2D>().enabled = true;
     }
 
-    private void OnParticleCollision(GameObject coll)
+    protected void Update()
+    {
+        CheckConnection();
+    }
+
+    protected void OnParticleCollision(GameObject coll)
     {
         if (!canCollide)
             return;
@@ -52,57 +57,62 @@ public class Repetidor : MonoBehaviour
         if (coll.tag == "Interferencia")
         {
             curCollisionInfo = ColliderInfo.Interference;
-            if (reference == null)
+            if (particuleReference == null)
             {
                 AddParticle(coll);
             }
-            else if (reference.tag == "Sinal")
+            else if (particuleReference.tag == "Sinal")
             {
-                Destroy(reference);
+                Destroy(particuleReference);
                 AddParticle(coll);
             }
         }
         else if (coll.tag == "Sinal")
         {
-            if (reference == null)
+            if (particuleReference == null)
             {
                 AddParticle(coll);
             }
-            else if (reference.tag == "Interferencia")
+            else if (particuleReference.tag == "Interferencia")
             {
-                Destroy(reference);
+                Destroy(particuleReference);
                 AddParticle(coll);
             }
         }
     }
 
-    private void OnDisable()
+    protected void OnDisable()
     {
-        if (reference != null)
+        if (particuleReference != null)
         {
-            Destroy(reference);
+            Destroy(particuleReference);
         }
     }
 
-    public virtual void AddParticle(GameObject coll)
+    protected virtual void AddParticle(GameObject coll)
     {
-        reference = Instantiate(coll);
-        reference.transform.SetParent(transform);
-        reference.transform.localPosition = Vector3.zero;
+        particuleReference = Instantiate(coll);
+        particuleReference.transform.SetParent(transform);
+        particuleReference.transform.localPosition = Vector3.zero;
+        if (coll.transform.parent.GetComponent<Repetidor>())
+        {
+            fatherReference = coll.transform.parent.GetComponent<Repetidor>();
+        }
+        else
+        {
+            fatherReference = null;
+        }
     }
 
-    public void CheckInterference()
+    protected void CheckInterference()
     {
         if (curCollisionInfo == ColliderInfo.Interference)
             curCollisionInfo = default(ColliderInfo);
     }
 
-    //public void DisableParticule()
-    //{
-    //    if (curCollisionInfo == default(ColliderInfo))
-    //    {
-    //        Destroy(reference);
-    //        reference = null;
-    //    }
-    //}
+    protected void CheckConnection()
+    {
+        if (fatherReference && fatherReference.particuleReference == null)
+            Destroy(particuleReference);
+    }
 }

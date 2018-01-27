@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class Amplificador : Repetidor
 {
-    public override void AddParticle(GameObject coll)
+    protected override void AddParticle(GameObject coll)
     {
-        if (gameObject.tag != "Amplificador")
-        {
-            base.AddParticle(coll);
-            reference.GetComponent<ParticleSystem>().startLifetime = coll.GetComponent<ParticleSystem>().startLifetime * 2;
-        }
+        base.AddParticle(coll);
+        particuleReference.GetComponent<ParticleSystem>().startLifetime = coll.GetComponent<ParticleSystem>().startLifetime * 2;
     }
 }
