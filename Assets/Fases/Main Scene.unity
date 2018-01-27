@@ -170,6 +170,7 @@ MonoBehaviour:
   - FaseTeste04
   - FaseTeste05
   - FaseTeste06
+  - GameOver Scene
 --- !u!1 &1850956439
 GameObject:
   m_ObjectHideFlags: 0
