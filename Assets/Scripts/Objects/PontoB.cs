@@ -22,10 +22,12 @@ public class PontoB : MonoBehaviour
     public float multiplier = 1f;
     private float signalMultiplier;
     private float winCondition { get { return ((doesInterferenceWin) ? -maxSignal : maxSignal); } }
+    private bool isTheBarFull = false;
     public bool isReceivingSignal = false;
 
     private void Start()
     {
+        SwapScenesAux.instance.winCounter = (FindObjectsOfType<PontoB>().Length);
         InvokeRepeating("Timer", 0, secondsToLoseSignal);
     }
 
@@ -64,7 +66,19 @@ public class PontoB : MonoBehaviour
 
         if (currSignal == winCondition)
         {
-            SwapScenesAux.instance.NextScene();
+            if (isTheBarFull == false)
+            {
+                SwapScenesAux.instance.NextScene();
+                isTheBarFull = true;
+            }
+        }
+        else
+        {
+            if(isTheBarFull == true)
+            {
+                SwapScenesAux.instance.winCounter += 1;
+                isTheBarFull = false;
+            }
         }
     }
 
