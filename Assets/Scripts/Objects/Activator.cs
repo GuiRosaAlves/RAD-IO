@@ -18,7 +18,12 @@ public class Activator : MonoBehaviour {
 
     protected void OnParticleCollision(GameObject coll)
     {
-        if(coll.tag == agent)
+        if (coll.tag == agent)
+        {
             GetComponent<Animator>().SetTrigger("Activate");
+            Destroy(GetComponent<Collider2D>());
+            Destroy(GetComponent("Halo"));
+            Destroy(transform.GetChild(1).gameObject); 
+        }
     }
 }
