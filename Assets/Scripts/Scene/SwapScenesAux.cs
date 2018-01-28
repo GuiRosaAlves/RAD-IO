@@ -19,6 +19,14 @@ public class SwapScenesAux : MonoBehaviour {
     private void Update()
     {
         currentSceneIndex = ScenesList.IndexOf(GameManager.instance.currentSceneName);
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
+        {
+            NextScene();
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.K))
+        {
+            LastScene();
+        }
         if (Input.anyKeyDown)
         {
             aux += Input.inputString;
@@ -34,7 +42,18 @@ public class SwapScenesAux : MonoBehaviour {
 
     public void NextScene()
     {
-        GameManager.instance.SwitchScene(ScenesList[currentSceneIndex+1]);
+        if(currentSceneIndex != (ScenesList.Count - 1))
+        {
+            GameManager.instance.SwitchScene(ScenesList[currentSceneIndex+1]);
+        }
+    }
+
+    public void LastScene()
+    {
+        if(currentSceneIndex != 0)
+        {
+            GameManager.instance.SwitchScene(ScenesList[currentSceneIndex - 1]);
+        }
     }
 
     public void NextScene(int desiredScene)

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
-    public AudioClip bgMusic;
     public static AudioManager instance;
+
 
     private void Awake()
     {

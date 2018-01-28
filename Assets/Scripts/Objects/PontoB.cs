@@ -15,12 +15,13 @@ public class PontoB : MonoBehaviour
 
     public float secondsToLoseSignal = 2;
     public float loseSignalRate = 2;
-    public float currSignal = 0;
-    public float maxSignal = 100f;  //Change fields to private
+    public bool doesInterferenceWin = false;
+    private float currSignal = 0;
+    private float maxSignal = 100f;
     [Range(1f, 50f)]
     public float multiplier = 1f;
     private float signalMultiplier;
-
+    private float winCondition { get { return ((doesInterferenceWin) ? -maxSignal : maxSignal); } }
     public bool isReceivingSignal = false;
 
     private void Start()
@@ -61,13 +62,9 @@ public class PontoB : MonoBehaviour
 
         currSignal = Mathf.Clamp(currSignal, aux, maxSignal);
 
-        if (currSignal == maxSignal)
+        if (currSignal == winCondition)
         {
             SwapScenesAux.instance.NextScene();
-        }
-        else if (currSignal == -maxSignal)
-        {
-            SwapScenesAux.instance.GameOver();
         }
     }
 
