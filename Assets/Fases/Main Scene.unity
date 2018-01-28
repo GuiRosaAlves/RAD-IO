@@ -178,6 +178,7 @@ MonoBehaviour:
   - FaseTeste12
   - FaseTeste13
   - FaseTeste99
+  - VictoryScene
 --- !u!114 &947725942
 MonoBehaviour:
   m_ObjectHideFlags: 0

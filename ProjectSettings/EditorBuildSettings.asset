@@ -56,3 +56,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Fases/FaseTeste99.unity
     guid: 6a6d218305cc24548b66d6d22952e091
+  - enabled: 1
+    path: Assets/Fases/VictoryScene.unity
+    guid: 4c67e387462c1c84cbe5e424eb4ed418
