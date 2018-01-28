@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
-public enum ColliderInfo {Null, Signal, Interference };
-public class Repetidor : MonoBehaviour
+public enum ColliderInfo { Null, Signal, Interference };
+public class Repetidor : MonoBehaviour, IBeginDragHandler
 {
     protected GameObject particuleReference;
-    protected Repetidor fatherReference;
+    public Repetidor fatherReference;
     public float secondsToLoseSignal = 2;
     protected ColliderInfo curCollisionInfo = ColliderInfo.Null;
     protected bool canCollide = true;
+    public List<Repetidor> childsReferences = new List<Repetidor>();
 
 
     protected void Awake()
@@ -17,20 +19,36 @@ public class Repetidor : MonoBehaviour
         InvokeRepeating("CheckInterference", 0, 0.3f);
     }
 
+    void OnMouseDown()
+    {
+        GetComponent<Collider2D>().enabled = false;
+
+        DestroyReferences();
+
+        canCollide = false;
+    }
+
     protected void OnMouseDrag()
     {
+        
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        GetComponent<Collider2D>().enabled = false;
+        transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
+    }
+
+    void DestroyReferences()
+    {
         if (particuleReference != null)
         {
             Destroy(particuleReference);
             particuleReference = null;
+            foreach (var r in childsReferences)
+            {
+                r.DestroyReferences();
+            }
+            childsReferences = new List<Repetidor>();
+            fatherReference = null;
         }
-
-        canCollide = false;
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
     }
 
     protected void OnMouseUp()
@@ -67,6 +85,7 @@ public class Repetidor : MonoBehaviour
                 Destroy(particuleReference);
                 AddParticle(coll);
             }
+
         }
         else if (coll.tag == "Sinal")
         {
@@ -97,7 +116,11 @@ public class Repetidor : MonoBehaviour
         particuleReference.transform.localPosition = Vector3.zero;
         if (coll.transform.parent.GetComponent<Repetidor>())
         {
-            fatherReference = coll.transform.parent.GetComponent<Repetidor>();
+            if(coll.transform.parent.GetComponent<Repetidor>().fatherReference != this)
+            {
+                fatherReference = coll.transform.parent.GetComponent<Repetidor>();
+                fatherReference.childsReferences.Add(this);
+            }
         }
         else
         {
@@ -115,5 +138,10 @@ public class Repetidor : MonoBehaviour
     {
         if (fatherReference && fatherReference.particuleReference == null)
             Destroy(particuleReference);
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        print("onbein");
     }
 }
