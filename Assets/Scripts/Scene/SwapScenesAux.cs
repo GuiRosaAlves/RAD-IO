@@ -51,6 +51,7 @@ public class SwapScenesAux : MonoBehaviour
         winCounter--;
         if (currentSceneIndex != (ScenesList.Count - 1) && winCounter == 0)
         {
+            AudioManager.victoryAS.PlayOneShot(AudioManager.instance.victorySound);
             GameManager.instance.SwitchScene(ScenesList[currentSceneIndex + 1]);
         }
     }

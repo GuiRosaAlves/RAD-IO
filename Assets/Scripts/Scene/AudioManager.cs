@@ -6,12 +6,14 @@ public class AudioManager : MonoBehaviour {
 
     public static AudioManager instance;
 
-    public AudioSource victoryAS;
+    public static AudioSource victoryAS;
+
+    public AudioClip victorySound;
 
     private void Awake()
     {
         instance = this;
-        victoryAS = AddAudioSource();
+        victoryAS = AddAudioSource(gameObject);
     }
 
     private void OnDestroy()
@@ -22,17 +24,18 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    public AudioSource AddAudioSource()
+    public static AudioSource AddAudioSource(GameObject gameObject)
     {
         return gameObject.AddComponent<AudioSource>();
     }
 
-    public void PlayClip(AudioSource source, AudioClip clip)
+    public static void PlayMusic(AudioSource source, AudioClip clip)
     {
         source.clip = clip;
         source.Play();
     }
-    public void PlayClip(AudioSource source, AudioClip clip, ulong delay)
+
+    public static void PlayClip(AudioSource source, AudioClip clip, ulong delay)
     {
         source.clip = clip;
         source.Play(delay);
