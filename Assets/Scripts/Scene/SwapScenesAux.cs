@@ -8,10 +8,10 @@ public class SwapScenesAux : MonoBehaviour
     public static SwapScenesAux instance;
 
     public List<string> ScenesList = new List<string>();
-    public int winCounter = 0;
+    [HideInInspector]public int winCounter = 0;
     private int currentSceneIndex;
-    public int desiredSceneIndex;
-    public string aux = "";
+    private int desiredSceneIndex;
+    private string aux = "";
 
     void Awake()
     {

@@ -6,10 +6,12 @@ public class AudioManager : MonoBehaviour {
 
     public static AudioManager instance;
 
+    public AudioSource victoryAS;
 
     private void Awake()
     {
         instance = this;
+        victoryAS = AddAudioSource();
     }
 
     private void OnDestroy()
