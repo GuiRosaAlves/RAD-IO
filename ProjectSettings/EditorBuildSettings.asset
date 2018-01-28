@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Fases/FaseTeste04.unity
     guid: bd3e0d2adbbc41f488a820de528ed006
   - enabled: 1
-    path: Assets/Fases/FaseTeste05.unity
+    path: Assets/Fases/FaseTeste07.unity
     guid: fa32c0eed4fd2d546870ec1027ec163c
   - enabled: 1
     path: Assets/Fases/GameOver Scene.unity

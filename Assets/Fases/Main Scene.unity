@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 947725940}
   - component: {fileID: 947725939}
   - component: {fileID: 947725941}
+  - component: {fileID: 947725942}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -171,6 +172,18 @@ MonoBehaviour:
   - FaseTeste05
   - FaseTeste06
   - GameOver Scene
+--- !u!114 &947725942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947725938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb5ab6099e1db842b3c1f1982f1c52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgMusic: {fileID: 0}
 --- !u!1 &1850956439
 GameObject:
   m_ObjectHideFlags: 0

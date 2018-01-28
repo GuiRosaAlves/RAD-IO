@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         updateDelegates[(int)SceneState.Ready] = UpdateSceneReady;
         updateDelegates[(int)SceneState.Run] = UpdateSceneRun;
 
-        nextSceneName = "Menu Scene";
+        nextSceneName = "FaseTeste01";
         sceneState = SceneState.Run;
     }
 
