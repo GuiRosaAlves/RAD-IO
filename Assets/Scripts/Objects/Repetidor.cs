@@ -19,6 +19,8 @@ public class Repetidor : MonoBehaviour
 
     protected void OnMouseDrag()
     {
+
+        GetComponent<Collider2D>().enabled = false;
         if (particuleReference != null)
         {
             Destroy(particuleReference);

@@ -308,6 +308,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 122940848760408752, guid: f60607600b7455f4cb8d1f10347b214a,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f60607600b7455f4cb8d1f10347b214a, type: 2}
   m_IsPrefabParent: 0
@@ -387,7 +392,7 @@ Transform:
   m_LocalPosition: {x: 0.15533525, y: 1.6082542, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1760302306}
+  - {fileID: 1702125778}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -487,9 +492,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8aba0cca2cf182b48ad6f438699291a1, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1760302306 stripped
+--- !u!4 &1702125778 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4380438201212308, guid: 8d9bff470160f57469012767400df35c,
+  m_PrefabParentObject: {fileID: 4825883936208500, guid: 8d9bff470160f57469012767400df35c,
     type: 2}
   m_PrefabInternal: {fileID: 102437}
 --- !u!1001 &2063781537
