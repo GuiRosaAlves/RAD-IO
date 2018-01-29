@@ -301,7 +301,7 @@ Prefab:
     - target: {fileID: 114277501569504234, guid: f60607600b7455f4cb8d1f10347b214a,
         type: 2}
       propertyPath: multiplier
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212811862252532570, guid: f60607600b7455f4cb8d1f10347b214a,
         type: 2}
