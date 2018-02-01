@@ -8,6 +8,8 @@ public class Amplificador : Repetidor
     protected override void AddParticle(GameObject coll)
     {
         base.AddParticle(coll);
-        particuleReference.GetComponent<ParticleSystem>().startLifetime = coll.GetComponent<ParticleSystem>().startLifetime * adjust;
+#pragma warning disable CS0618 // Type or member is obsolete
+        particuleReference.GetComponent<ParticleSystem>().startLifetime *= adjust;
+#pragma warning restore CS0618 // Type or member is obsolete
     }
 }
