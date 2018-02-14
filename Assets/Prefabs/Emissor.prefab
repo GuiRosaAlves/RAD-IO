@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4771219642813636}
   m_Layer: 0
   m_Name: Emissor
-  m_TagString: Sinal
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -299240138
+  randomSeed: 840339254
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -261,7 +261,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 1, b: 0.08965516, a: 1}
+      maxColor: {r: 0.07586217, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

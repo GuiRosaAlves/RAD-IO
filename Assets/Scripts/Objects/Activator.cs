@@ -5,6 +5,7 @@ using UnityEngine;
 public class Activator : MonoBehaviour {
 
     public string agent;
+    public bool stay;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +22,12 @@ public class Activator : MonoBehaviour {
         if (coll.tag == agent)
         {
             GetComponent<Animator>().SetTrigger("Activate");
-            Destroy(GetComponent<Collider2D>());
-            Destroy(GetComponent("Halo"));
-            Destroy(transform.GetChild(1).gameObject); 
+            if (!stay)
+            {
+                Destroy(GetComponent<Collider2D>());
+                Destroy(GetComponent("Halo"));
+                Destroy(transform.GetChild(1).gameObject);
+            }
         }
     }
 }
