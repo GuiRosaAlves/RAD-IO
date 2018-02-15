@@ -48,8 +48,14 @@ EditorBuildSettings:
     path: Assets/Fases/FaseTeste13.unity
     guid: 4be15acc9ad1e504d8fbe5992d5d3e99
   - enabled: 1
-    path: Assets/Fases/FaseTeste99.unity
+    path: Assets/Fases/FaseTeste14.unity
     guid: 6a6d218305cc24548b66d6d22952e091
   - enabled: 1
     path: Assets/Fases/VictoryScene.unity
     guid: 4c67e387462c1c84cbe5e424eb4ed418
+  - enabled: 1
+    path: Assets/Fases/FaseTeste16.unity
+    guid: cba3f0c7352add048b3476016fbab78e
+  - enabled: 1
+    path: Assets/Fases/FaseTeste15.unity
+    guid: 9d383a2cd44f5d74cb0536b48765786e
