@@ -181,6 +181,8 @@ MonoBehaviour:
   - FaseTeste14
   - FaseTeste15
   - FaseTeste16
+  - FaseTeste17
+  - FaseTeste18
   - VictoryScene
   winCounter: 0
 --- !u!114 &947725942

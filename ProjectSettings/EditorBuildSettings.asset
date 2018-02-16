@@ -59,3 +59,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Fases/FaseTeste15.unity
     guid: 9d383a2cd44f5d74cb0536b48765786e
+  - enabled: 1
+    path: Assets/Fases/FaseTeste17.unity
+    guid: ebd767f914125ba42a0503407285b693
+  - enabled: 1
+    path: Assets/Fases/FaseTeste18.unity
+    guid: 65d34290edb377543ac344ab104b74fa
