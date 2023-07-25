@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "RAD-IO.data.unityweb",
+"asmCodeUrl": "RAD-IO.asm.code.unityweb",
+"asmMemoryUrl": "RAD-IO.asm.memory.unityweb",
+"asmFrameworkUrl": "RAD-IO.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
