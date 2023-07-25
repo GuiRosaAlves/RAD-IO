@@ -58,7 +58,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 Special thanks to the Unity community for their invaluable resources and tutorials on game development and the Unity Particle System.
-
----
-
-RAD-IO is an immersive puzzle game that showcases your ability to creatively use repeaters and amplifiers to transmit a green signal through obstacles. The README provides an overview of the project, its features, how to play, and the technologies used. Make sure to replace "link_to_preview.gif" with the actual link to your preview GIF or image, and update "your-username" with your actual GitHub username in the GitHub Pages link. Good luck with your project!
