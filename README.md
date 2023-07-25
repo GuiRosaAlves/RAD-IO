@@ -39,6 +39,12 @@ RAD-IO is an exciting puzzle game that challenges your problem-solving skills! Y
 
 The project is hosted on GitHub Pages, allowing you to access a live demo of RAD-IO. Visit the [RAD-IO](https://guirosaalves.github.io/RAD-IO) to experience the gameplay firsthand.
 
+## Credits
+
+- Developed by: [Guilherme Rosa Alves] [TheMoonestOne]
+- Level Design by: [TheMoonestOne]
+- Code by: [Guilherme Rosa Alves]
+- 
 ## Contact
 
 If you have any questions, suggestions, or feedback about RAD-IO, feel free to reach out to us:
