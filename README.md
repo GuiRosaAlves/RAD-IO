@@ -44,7 +44,7 @@ The project is hosted on GitHub Pages, allowing you to access a live demo of RAD
 - Developed by: [Guilherme Rosa Alves] [TheMoonestOne]
 - Level Design by: [TheMoonestOne]
 - Code by: [Guilherme Rosa Alves]
-- 
+ 
 ## Contact
 
 If you have any questions, suggestions, or feedback about RAD-IO, feel free to reach out to us:
